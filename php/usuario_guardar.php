@@ -1,6 +1,7 @@
 <?php
 require_once("main.php");
 
+
 //almacenando datos de los inputs enviados desde el formulario del archivo user_new
 $nombre = limpiar_cadena($_POST['usuario_nombre']);
 $apellido = limpiar_cadena($_POST['usuario_apellido']);
@@ -71,7 +72,7 @@ if($email != ""){
                 ';
                 exit();
             }
-            $check_email=null;
+            $check_email=null; //esta funcion lo que hace es cerrar la conexion  que se abrio en la linea 63
 
     }else{
 
@@ -86,3 +87,65 @@ if($email != ""){
     }
 
 }
+
+#Verfificando el usuario#
+
+$check_usuario = conexion();// se abre la conexion en el archivo main
+$check_usuario = $check_usuario->query("SELECT usuario_usuario FROM usuario WHERE usuario_usuario='$usuario'");// se hace la consulta en la base de datos 
+
+    if($check_usuario->rowCount()>0){ //rowCount nos devuleve cuantos registros se selecciono en la consulta de la base de datos y se hace la validacion
+        echo '
+        <div class="notification is-danger is-light">
+            <strong>¡Ocurrio un error inesperado!</strong><br>
+            El USUARIO ingresado ya se encuentra registrado, por favor elija otro!
+        </div>
+        ';
+        exit();
+    }
+    $check_usuario=null;
+
+
+    #verificando que las claves coincidan#
+    if($clave_1 != $clave_2){
+        echo '
+        <div class="notification is-danger is-light">
+            <strong>¡Ocurrio un error inesperado!</strong><br>
+            Las CONTRASEÑAS no coinciden
+        </div>
+        ';
+        exit();
+    }else{
+        $clave=password_hash($clave_1, PASSWORD_BCRYPT,["cost"=>10]); //esta funcion es para encriptar la contraseña
+    }
+
+    #guardando datos#
+
+    $guardar_usuario=conexion();
+    // $guardar_usuario=$guardar_usuario->query("INSERT INTO usuario(usuario_nombre,usuario_apellido,usuario_usuario,usuario_clave,usuario_email) VALUES('$nombre','$apellido','$usuario','$clave','$email')"); //este metodo es el comun insertado mediante query
+    $guardar_usuario=$guardar_usuario->prepare("INSERT INTO usuario(usuario_nombre,usuario_apellido,usuario_usuario,usuario_clave,usuario_email) VALUES(:nombre,:apellido,:usuario,:clave,:email)"); //con este metodo se evita la inyeccion sql
+
+    $marcadores=[
+        ":nombre"=>$nombre,
+        ":apellido"=>$apellido,
+        ":usuario"=>$usuario,
+        ":clave"=>$clave,
+        ":email"=>$email
+    ];
+    $guardar_usuario->execute($marcadores);
+
+    if($guardar_usuario->rowCount()==1){
+        echo '
+        <div class="notification is-success is-light">
+            <strong>¡Registro Exitoso!</strong><br>
+            El usuario se registro correctamente!
+        </div>
+        ';
+    }else{
+        echo '
+        <div class="notification is-danger is-light">
+            <strong>¡Ocurrio un error inesperado!</strong><br>
+            Usuario no registrado, intente nuevamente
+        </div>
+        ';
+    }
+    $guardar_usuario=null;

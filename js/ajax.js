@@ -1,4 +1,4 @@
-const formularios_ajax=document.querySelectorAll(".formulariosAjax");
+const formularios_ajax=document.querySelectorAll(".formularioAjax");
 
 function enviar_formulario_ajax(e){
     
