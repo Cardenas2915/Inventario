@@ -1,3 +1,4 @@
+
     <div class="container is-fluid mb-6">
         <h1 class="title">Usuarios</h1>
         <h2 class="subtitle">Nuevo usuario</h2>
@@ -6,7 +7,7 @@
 
         <div class="form-rest mb-6 mt-6"></div>
 
-        <form action="../php/usuario_guardar.php" method="POST" class="formularioAjax" autocomplete="off" >
+        <form action="./php/usuario_guardar.php" method="POST" class="formularioAjax" autocomplete="off" >
             <div class="columns">
                 <div class="column">
                     <div class="control">
@@ -54,3 +55,4 @@
             </p>
         </form>
     </div>
+
