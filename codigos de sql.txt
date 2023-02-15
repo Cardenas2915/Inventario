@@ -1,0 +1,25 @@
+SELECT * FROM "usuario" ORDER BY "campo de la seleccion de datos que vamos a usar ej:usuario_nombre" ASC; : Sirve para ordenar los archivos seleccionados
+
+ASC: significa ascedente
+DESC: significa descendente
+
+SELECT * FROM usuario WHERE usuario_id='2'; :sirve para buscar en especifico un registro se puede usar el != si queremos ignorar algo
+
+
+SELECT * FROM usuario WHERE usuario_apellido LIKE '%alfaro%'; : esta funcion sirve para hacer el buscador donde especifica en medio de los simbolos de porcentaje que debe coincidir con ese texto o valor
+
+SELECT * FROM usuario WHERE usuario_apellido LIKE '%alfaro%' OR usuario_nombre LIKE %pineda%; : esta funcion hace el buscador pero con dos parametros donde se cumpla almenos una condicion
+la condicion AND es para que se cumplan si o si las dos condiciones
+
+
+esta es para buscar una condicion y se ordene segun la orden DESC o ASC
+SELECT * FROM usuario WHERE usuario_nombre LIKE '%alfaro%' ORDER BY usuario_nombre DESC;
+
+hacemos la seleccion mediante un limite con un orden descendente / en este caso se esta seleccionando los dos ultimos registros de la tabla
+SELECT * FROM usuario ORDER BY usuario_id DESC LIMIT 2;  se puede contar son subindices ej: 0,3
+
+esta funcion cuenta cuantos registro hay en el tabla 
+SELECT COUNT(*) FROM usuario
+
+contara todos menos el que tiene el id seleccionado
+SELECT COUNT(usuario_id) FROM usuario WHERE usuario_id !='1';

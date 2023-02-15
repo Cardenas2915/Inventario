@@ -1,0 +1,6 @@
+1 preguntar por la encriptacion de la clave
+2 se utilizara jquery validate o metodo html? solo en el formulario de  crear datos o en todo ?
+3 que datos se van a pedir al perfil del instructor
+4 se usara metodo query o prepare al realizar la consulta a la base de datos
+5 se iniciara sesion en cookies o no
+6 se hara un index o debe iniciar sesion para empezar a trabajar
