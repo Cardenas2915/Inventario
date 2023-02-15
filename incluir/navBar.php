@@ -66,7 +66,7 @@
             <a class="button is-primary is-rounded">
                 Mi cuenta
             </a>
-            <a class="button is-link is-rounded">
+            <a href="index.php?vista=logout" class="button is-link is-rounded">
                 Cerrar Sesion
             </a>
             </div>
