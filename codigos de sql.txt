@@ -23,3 +23,6 @@ SELECT COUNT(*) FROM usuario
 
 contara todos menos el que tiene el id seleccionado
 SELECT COUNT(usuario_id) FROM usuario WHERE usuario_id !='1';
+
+borrar usuarios con un condicional/se puede decir que sea borre todos o con dos parametros
+DELETE FROM usuarios WHERE usuario_id='7';

@@ -78,11 +78,11 @@ function renombrar_fotos($nombre){
 
 
 #funcion paginador de tablas#cap 14
-function paginador_tablas($paginas,$Npaginas,$url,$botones){
+function paginador_tablas($pagina,$Npaginas,$url,$botones){
 	$tabla ='<nav class="pagination is-centered is-rounded" role="navigation" aria-label="pagination">';
 
 	//FUNCION PARA EL BOTON ANTERIOR
-	if($paginas <= 1){
+	if($pagina <= 1){
 		$tabla.='<a class="pagination-previous is-disabled" disabled>Anterior</a>
 		<ul class="pagination-list">
 		';
@@ -96,7 +96,7 @@ function paginador_tablas($paginas,$Npaginas,$url,$botones){
 
 	//funcion para los botones del medio
 	$ci=0;
-	for($i=$pagina; $i<=$pagina; $i++){
+	for($i=$pagina; $i<=$Npaginas; $i++){
 
 		if($ci>=$botones){
 			break;
@@ -112,7 +112,7 @@ function paginador_tablas($paginas,$Npaginas,$url,$botones){
 	}
 
 	//FUNCION PARA EL BOTON SIGUIENTE
-	if($paginas == $Npaginas ){
+	if($pagina == $Npaginas ){
 		$tabla.='
 		</ul>
 		<a class="pagination-next is-disabled" disabled>Siguiente</a>
