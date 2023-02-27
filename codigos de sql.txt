@@ -26,3 +26,6 @@ SELECT COUNT(usuario_id) FROM usuario WHERE usuario_id !='1';
 
 borrar usuarios con un condicional/se puede decir que sea borre todos o con dos parametros
 DELETE FROM usuarios WHERE usuario_id='7';
+
+actualizar usuario en la tabla
+UPDATE usuario SET usuario_nombre='Arvey', usuario_apellido='cruz' WHERE usuario_id='3';

@@ -30,7 +30,7 @@
                 <div class="navbar-dropdown">
                 <a class="navbar-item" href="index.php?vista=user_new">Nuevo</a>
                 <a class="navbar-item" href="index.php?vista=user_list">Lista</a>
-                <a class="navbar-item"href="index.php?vista=user_search">Buscar</a>
+                <a class="navbar-item" href="index.php?vista=user_search">Buscar</a>
                 
                 </div>
             </div>
@@ -39,9 +39,9 @@
                 <a class="navbar-link">Categorias</a>
 
                 <div class="navbar-dropdown">
-                <a class="navbar-item">Nueva categoria</a>
-                <a class="navbar-item">Lista categoria</a>
-                <a class="navbar-item">Buscar categoria</a>
+                <a href="index.php?vista=category_new" class="navbar-item">Nueva categoria</a>
+                <a class="navbar-item" href="index.php?vista=category_list">Lista categoria</a>
+                <a class="navbar-item" href="index.php?vista=category_search">Buscar categoria</a>
                 
                 </div>
             </div>
@@ -50,10 +50,10 @@
                 <a class="navbar-link">Productos</a>
 
                 <div class="navbar-dropdown">
-                <a class="navbar-item">Nuevo producto</a>
-                <a class="navbar-item">Lista producto</a>
-                <a class="navbar-item">productos por categorias</a>
-                <a class="navbar-item">Buscar producto</a>
+                <a class="navbar-item" href="index.php?vista=product_new">Nuevo producto</a>
+                <a class="navbar-item" href="index.php?vista=product_list" >Lista producto</a>
+                <a class="navbar-item" href="index.php?vista=product_category">productos por categorias</a>
+                <a class="navbar-item" href="index.php?vista=product_search">Buscar producto</a>
 
                 </div>
             </div>
@@ -63,7 +63,7 @@
         <div class="navbar-end">
         <div class="navbar-item">
             <div class="buttons">
-            <a class="button is-primary is-rounded">
+            <a href="index.php?vista=user_update&user_id_up=<?php echo $_SESSION['id']; ?>" class="button is-primary is-rounded">
                 Mi cuenta
             </a>
             <a href="index.php?vista=logout" class="button is-link is-rounded">
