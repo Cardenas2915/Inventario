@@ -29,3 +29,13 @@ DELETE FROM usuarios WHERE usuario_id='7';
 
 actualizar usuario en la tabla
 UPDATE usuario SET usuario_nombre='Arvey', usuario_apellido='cruz' WHERE usuario_id='3';
+
+consulta para poder unir o juntar datos de 2 o mas tablas
+SELECT * FROM producto INNER JOIN categoria ON producto.categoria_id=categoria.categoria_id;
+
+consulta para unir ciertas partes de la tabla o tablas
+SELECT
+producto.producto_id,producto.producto_codigo,producto.producto_nombre,categoria.categoria_nombre 
+FROM producto
+INNER JOIN categoria ON producto.categoria_id=categoria.categoria_id
+INNER JOIN usuario ON producto.usuario_id=usuario.usuario_id;
