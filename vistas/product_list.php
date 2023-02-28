@@ -10,9 +10,9 @@
 
     require_once("./php/main.php");
 
-    #condicion para eliminar categoria#
-    if(isset($_GET['category_id_del'])){
-        require_once("./php/categoria_eliminar.php");
+    #condicion para eliminar productos#
+    if(isset($_GET['product_id_del'])){
+        require_once("./php/producto_eliminar.php");
     }
 
         // esta definiendo en que pagina de la lista se ecuentra

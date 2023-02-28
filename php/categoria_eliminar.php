@@ -26,7 +26,7 @@ if($check_productos->rowCount()<=0){
     if($eliminar_categoria->rowCount()==1){
         echo '
         <div class="notification is-info is-light">
-            <strong>¡Usuario Eliminado!</strong><br>
+            <strong>¡Categoria Eliminado!</strong><br>
             Los datos de la categoria se eliminaron correctamente!
         </div>
     ';
