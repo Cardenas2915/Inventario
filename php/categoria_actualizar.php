@@ -25,7 +25,7 @@ exit();
 
 $check_categoria=null;
 
-    /*== Almacenando datos del usuario enviados desde el formulario del archivo category_update ==*/
+    /*== Almacenando datos delas categorias enviados desde el formulario del archivo category_update ==*/
     $nombre=limpiar_cadena($_POST['categoria_nombre']);
     $ubicacion=limpiar_cadena($_POST['categoria_ubicacion']);
 
