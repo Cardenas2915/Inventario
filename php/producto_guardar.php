@@ -164,7 +164,6 @@ $check_categoria = $check_categoria->query("SELECT categoria_id FROM categoria W
         }
 
         #extension de la imagem#
-
         switch(mime_content_type($_FILES['producto_foto']['tmp_name'])){
             case'image/jpeg':
                 $img_ext=".jpg";

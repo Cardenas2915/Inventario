@@ -15,7 +15,7 @@
     $check_producto=conexion();
     $check_producto=$check_producto->query("SELECT * FROM producto WHERE producto_id='$id'");
 
-    if($check_producto->rowCount()>0){  
+    if($check_producto->rowCount()>0){   
 
         $datos=$check_producto->fetch(); // solo se ha un array de los datos seleccionados 
     ?>
